@@ -1,14 +1,27 @@
 {% extends 'Base.html' %}
-{% block title %}Démo Django{% endblock %}
+{% block title %}
+<div style="text-align: center;width: auto; margin-top: 20px; margin-bottom: 30px;">
+    <h1>Produits</h1>
+</div>
+{% endblock %}
 
 {% block contents %}
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
        {% for produit in prod_list %}
-       <p>{{produit.name}}</p>
+            <div class="card" style="width: 18rem;margin:10px;">
+                <img class="card-img-top" src="../static/imgs/{{produit.img}}" alt="Card image cap" style="margin-top: 5px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{produit.name}}</h5>
+                    <p class="card-text">{{produit.Description}}</p>
+                    <a href="AchatDetail.html?name={{produit.name}}" class="btn btn-primary">Acheter</a>
+                </div>
+            </div>
        {% endfor %}
     </div>
 </div>
+
+
 
 {% endblock %}
