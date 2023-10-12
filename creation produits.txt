@@ -1,13 +1,4 @@
-from django.shortcuts import render
-from django.template import loader
-from . import models
-
-
-
-def Accueil(request):
-    produits = models.Produit.objects.all()
-
-    for p in produits:
+for p in produits:
         p.delete()
 
 
@@ -57,13 +48,3 @@ def Accueil(request):
     prod1.save()
     prod1 = models.Produit(name="village",Description="Hub of Monkey industry, a un certain nombre d'avantages différents pour aider tous vos singes. Augmente la gamme de tous les singes dans son rayon de 10 %.",prix=1020,img="village.png")
     prod1.save()
-    
-   
-    
-    
-
-    context = {
-        'prod_list': produits,
-    }
-    return render(request,'Accueil.html',context)
-
