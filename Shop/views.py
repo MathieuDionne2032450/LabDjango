@@ -1,7 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.template import loader
+from . import models
 
-def accueil(request):
-    template = loader.get_template('Accueil.html')
-    return HttpResponse(template.render())
+def Accueil(request):
+    produits = models.Produit.objects.all()
+    context = {
+        'name': 'test',
+        'Description': '123',
+        'prix' : '456',
+        'img' : '789',
+        'prod_list': produits,
+    }
+    return render(request,'Accueil.html',context)
+

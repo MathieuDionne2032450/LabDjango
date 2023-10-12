@@ -1,2 +1,14 @@
 {% extends 'Base.html' %}
 {% block title %}Démo Django{% endblock %}
+
+{% block contents %}
+
+<div class="container-fluid">
+    <div class="row">
+       {% for produit in prod_list %}
+       <p>{{produit.name}}</p>
+       {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
