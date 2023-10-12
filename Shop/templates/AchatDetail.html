@@ -1,0 +1,18 @@
+{% extends 'Base.html' %}
+{% block title %}Démo Django{% endblock %}
+
+{% block contents %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <img src=../static/imgs/{{Produit.img}} class="img-fluid" alt={{Produit.img}}>  
+        </div>
+        <div class="col-6">
+            <div>
+                <label class="form-label">Email address</label>
+                <input type="text" class="form-control">
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -4,12 +4,16 @@ from . import models
 
 def Accueil(request):
     produits = models.Produit.objects.all()
+    test = models.Produit(name="Poire",Description="432",prix = 5, img="fsdfr")
+    test.save()
     context = {
-        'name': 'test',
-        'Description': '123',
-        'prix' : '456',
-        'img' : '789',
         'prod_list': produits,
     }
     return render(request,'Accueil.html',context)
 
+def AchatDetail(request,ProduitName):
+    produit = models.Produit.objects.filter(name='name')
+    context = {
+        'produit': produit,
+    }
+    return render(request,'AchatDetail.html',context)
