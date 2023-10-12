@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{produit.name}}</h5>
                     <p class="card-text">{{produit.Description}}</p>
-                    <a href="AchatDetail.html?name={{produit.name}}" class="btn btn-primary">Acheter</a>
+                    <a href="{% url 'detail'  ProduitName=produit.name %}" class="btn btn-primary">Acheter</a>
                 </div>
             </div>
        {% endfor %}
