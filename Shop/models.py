@@ -9,3 +9,8 @@ class Produit(models.Model):
     prix = models.BigIntegerField()
     img = models.CharField(max_length=255)
 
+class PanierProduit(models.Model):
+    nomProduit = models.CharField(max_length=255)
+    quantite = models.IntegerField(max_length=255)
+    ameliorationChemin = models.CharField(max_length=255)
+    ameliorationNiveau = models.IntegerField(max_length=255)

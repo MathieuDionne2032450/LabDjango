@@ -8,7 +8,7 @@
         </div>
         <div class="col-lg-4  col-md-4 col-sm-12 card text-center">
             <table style="height: 100% !important;" >
-                <form action="../panier" method="post"></form>
+                <form action="../panier/" method="post">{% csrf_token %}
                 <tr>
                     <td colspan="2">
                         <h1>{{produit.name}}</H1>
@@ -21,9 +21,9 @@
                     <td>
                         <div>
                             <select name="Amelioration" >
-                                <option value="1">chemin 1</option>
-                                <option value="2">chemin 2</option>
-                                <option value="3">chemin 3</option>
+                                <option value="Chemin 1">chemin 1</option>
+                                <option value="Chemin 2">chemin 2</option>
+                                <option value="Chemin 3">chemin 3</option>
                             </select>
                         </div>
                     </td>
@@ -33,17 +33,29 @@
                     <td><Label>Niveau de l'amélioration</Label></td>
                     <td>
                         <div>
-                            <input name="NumeroEvolution" type="number" min="1" max="5">
+                            <input name="NumeroEvolution" type="number" min="1" max="5" value="{{Niveau}}">
                         </div>
                     </td>
                 </tr>
+
+                <tr>
+                    <td><Label>Niveau de l'amélioration</Label></td>
+                    <td>
+                        <div>
+                            <input name="quantite" type="number" min="1" max="10" value="{{quantite}}">
+                        </div>
+                    </td>
+                </tr>
+
                 <tr>
                     <td colspan="2">
                         <div>
-                            <input name="Enregistrer" type="submit" value="Ajoutez au panier">
+                            <input type="submit" value="Ajoutez au panier">
                         </div>
                     </td>
                 </tr>
+                <input type="hidden" value="{{produit.name}}" name="nomProduit"/>
+                <input type="hidden" value="0" name="panierId"/>
             </form>
             </table>
         

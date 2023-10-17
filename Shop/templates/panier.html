@@ -13,12 +13,15 @@
           </tr>
         </thead>
         <tbody>
-            {% for PanierProduit in historique_liste%}
+            {% for PanierProduit in panier_liste%}
           <tr>
             <th scope="row">{{PanierProduit.id}}</th>
             <td>{{PanierProduit.nomProduit}}</td>
             <td>{{PanierProduit.ameliorationChemin}}</td>
             <td>{{PanierProduit.ameliorationNiveau}}</td>
+            <td>{{PanierProduit.quantite}}</td>
+            <td><a href="../ModifPanier/{{PanierProduit.nomProduit}}&{{PanierProduit.id}}">Modif</a></td>
+            <td><a href="../DeletePanier/{{PanierProduit.id}}"><i class="fa-regular fa-trash"></i></a></td>
           </tr>
           {%endfor%}
         </tbody>
