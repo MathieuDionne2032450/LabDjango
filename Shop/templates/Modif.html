@@ -1,0 +1,50 @@
+{% extends 'Base.html' %}
+
+{% block contents %}
+<div class="container" style="padding: 20px;">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <img src=../static/imgs/{{produit.img}} class="img-fluid" alt={{Produit.img}}>  
+        </div>
+        <div class="col-lg-4  col-md-4 col-sm-12 card text-center">
+            <table style="height: 100% !important;" >
+                <form action="../ModifDone/" method="post">{% csrf_token %}
+                <tr>
+                    <td colspan="2">
+                        <input type="hidden" name="oldname" value="{{produit.name}}"></input>
+                        <label for="newname">Nom :  </label>
+                        <input type="text" name="newname" value="{{produit.name}}"></input>
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                   
+                    <td colspan="2">
+                        <label for="prix">Prix :  </label>
+                        <input type="text" name="prix" value="{{produit.prix}}"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="desc">Description :  </label>
+                        <input type="text" name="desc" value="{{produit.Description}}"></input>
+                    </td>
+                    
+                </tr>
+
+                
+                <tr>
+                    <td colspan="2">
+                        <div>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </div>
+                    </td>
+                </tr>
+            </form>
+            </table>
+        
+        </div>
+    </div>
+</div>
+{% endblock %}

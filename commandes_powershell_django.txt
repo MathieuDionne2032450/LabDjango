@@ -83,3 +83,17 @@ python manage.py tests
 https://pypi.org/project/django-mathfilters/
 pip install django-mathfilters
 Then add mathfilters to your INSTALLED_APPS.
+
+
+
+
+def DeletePanier(request,PanierProduitId):
+    models.PanierProduit.objects.all().filter(id = PanierProduitId).delete()
+
+    historique = models.PanierProduit.objects.all()
+
+    context = {
+        'panier_liste': historique
+    }
+
+    return render(request,'panier.html',context)
