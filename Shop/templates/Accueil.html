@@ -1,21 +1,21 @@
 {% extends 'Base.html' %}
 {% block title %}
 <div style="text-align: center;width: auto; margin-top: 20px; margin-bottom: 30px;">
-    <h1>Produits</h1>
+    <h1 style="color:white"><b>Produits</b></h1>
 </div>
 {% endblock %}
 
 {% block contents %}
-
 <div class="container">
     <div class="row">
        {% for produit in prod_list %}
             <div class="card" style="width: 18rem;margin:10px;">
                 <img class="card-img-top" src="../static/imgs/{{produit.img}}" alt="Card image cap" style="margin-top: 5px;">
                 <div class="card-body">
-                    <h5 class="card-title">{{produit.name}}</h5>
+                    <h3 class="card-title"><b>{{produit.name}}</b></h3>
                     <p class="card-text">{{produit.Description}}</p>
-                    <a href="{% url 'detail'  ProduitName=produit.name %}" class="btn btn-primary">Acheter</a>
+                    <h5 class="card-title"><b>{{produit.prix}} $</b></h5>
+                    <a href="AchatDetail.html?name={{produit.name}}" class="btn btn-primary">Acheter</a>
                 </div>
             </div>
        {% endfor %}
