@@ -3,10 +3,18 @@ from django.template import loader
 from django.http import HttpResponse
 from . import models
 
+def Home(request):
+    
+    context = {
+        
+    }
+    return render(request,'Home.html',context)
+
 
 
 def Accueil(request):
     produits = models.Produit.objects.all()
+    
     
     context = {
         'prod_list': produits,
