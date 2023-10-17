@@ -8,18 +8,30 @@
 {% block contents %}
 <div class="container">
     <div class="row">
-       {% for produit in prod_list %}
+        {% for produit in prod_list %}
             <div class="card" style="width: 18rem;margin:10px;">
                 <img class="card-img-top" src="../static/imgs/{{produit.img}}" alt="Card image cap" style="margin-top: 5px;">
                 <div class="card-body">
                     <h3 class="card-title"><b>{{produit.name}}</b></h3>
                     <p class="card-text">{{produit.Description}}</p>
                     <h5 class="card-title"><b>{{produit.prix}} $</b></h5>
-                    <a href="../AchatDetail/{{produit.name}}" class="btn btn-primary">Acheter</a>
+                    <a href="../AchatDetail/{{produit.name}}" class="btn btn-success">Acheter</a>
+                    <a href="../Modif/{{produit.name}}" class="btn btn-primary">Modifier</a>
+                    <a href="../Delete/{{produit.name}}" class="btn btn-danger">Supprimer</a>
                 </div>
             </div>
-       {% endfor %}
+        {% endfor %}
     </div>
+
+    <div class="row">
+        
+        <div class="d-grid gap-2" style="margin-bottom: 100px;">
+            <a href="../Ajout" class="btn btn-success btn-lg" type="button">Ajouter un singe</a>
+            
+        </div>
+        
+    </div>
+
 </div>
 
 
