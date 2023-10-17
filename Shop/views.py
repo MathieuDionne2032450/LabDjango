@@ -58,11 +58,16 @@ def ModifPanier(request,ProduitName,PanierProduitId):
 
 #Cette page s'occupe de créer ou modifier de produit dans le panier
 def Panier(request):
-
+    request.POST["panierId"]
     if(request.method == 'POST'):
-        if(request.POST["panierId"] == 0):
+        if(request.POST["panierId"] == '0'):
             hist1 = models.PanierProduit(nomProduit=request.POST["nomProduit"],quantite=request.POST["quantite"],ameliorationChemin = request.POST["Amelioration"],ameliorationNiveau = request.POST["NumeroEvolution"])
             hist1.save()
+        else:
+            hist1 = PanierProduit = models.PanierProduit.objects.all().filter(id = request.POST["panierId"]).update(quantite = request.POST["quantite"])
+            hist1 = PanierProduit = models.PanierProduit.objects.all().filter(id = request.POST["panierId"]).update(ameliorationChemin = request.POST["Amelioration"])
+            hist1 = PanierProduit = models.PanierProduit.objects.all().filter(id = request.POST["panierId"]).update(ameliorationNiveau = request.POST["NumeroEvolution"])
+
 
             
      
