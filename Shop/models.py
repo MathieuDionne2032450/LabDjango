@@ -8,3 +8,4 @@ class Produit(models.Model):
     Description = models.CharField(max_length=255)
     prix = models.BigIntegerField()
     img = models.CharField(max_length=255)
+

@@ -1,0 +1,29 @@
+{% extends 'Base.html' %}
+{% block contents %}
+<div class="container card">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nom du singe</th>
+            <th scope="col">Chemin</th>
+            <th scope="col">niveau</th>
+            <th scope="col">quantite</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for PanierProduit in historique_liste%}
+          <tr>
+            <th scope="row">{{PanierProduit.id}}</th>
+            <td>{{PanierProduit.nomProduit}}</td>
+            <td>{{PanierProduit.ameliorationChemin}}</td>
+            <td>{{PanierProduit.ameliorationNiveau}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+
+</div>
+
+  {% endblock %}

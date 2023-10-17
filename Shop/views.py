@@ -74,3 +74,15 @@ def AchatDetail(request,ProduitName):
         'produit': produit,
     }
     return render(request,'AchatDetail.html',context)
+
+def Panier(request):
+
+    historique = models.PanierProduit.objects.all()
+
+    hist1 = models.PanierProduit(nomProduit="test",quantite=0,ameliorationChemin = "Chemin 1",ameliorationNiveau = 1)
+    hist1.save()
+
+    context = {
+        'historique_liste': historique
+    }
+    return render(request,'panier.html',context)
