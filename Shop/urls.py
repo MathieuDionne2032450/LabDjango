@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('Shop/', views.Accueil, name='Shop'),
-    path('detail/<ProduitName>', views.AchatDetail, name='detail'),
+    path('AchatDetail/<ProduitName>', views.AchatDetail, name='detail'),
+    path('panier', views.AchatDetail, name='detail'),
 
 ]

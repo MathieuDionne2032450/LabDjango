@@ -68,8 +68,6 @@ def Accueil(request):
     return render(request,'Accueil.html',context)
 
 def AchatDetail(request,ProduitName):
-    produit = models.Produit.objects.filter(name='name')
-
     produit = models.Produit.objects.all().filter(name=ProduitName).values()[0]
     context = {
         'ProduitName':ProduitName,
